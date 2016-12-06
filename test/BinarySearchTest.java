@@ -31,4 +31,28 @@ public class BinarySearchTest {
         int[] array = {44,52,56,65,69,70,88,124,225,500,600,787,980,5000};
         assertEquals(BinarySearch.recursiveBinarySearch(array, 5000), 13);
     }
+
+    @Test
+    public void bsItTestNotExists() {
+        int[] array = {44,52,56,65,69,70,88,124,225,500,600,787,980,5000};
+        assertEquals(BinarySearch.searchIter(array, 1), -1);
+    }
+
+    @Test
+    public void bsItTestExists() {
+        int[] array = {44,52,56,65,69,70,88,124,225,500,600,787,980,5000};
+        assertEquals(BinarySearch.searchIter(array, 52), 1);
+    }
+
+    @Test
+    public void bsItTestLeftmost() {
+        int[] array = {44,52,56,65,69,70,88,124,225,500,600,787,980,5000};
+        assertEquals(BinarySearch.searchIter(array, 44), 0);
+    }
+
+    @Test
+    public void bsItTestRightmost() {
+        int[] array = {44, 52, 56, 65, 69, 70, 88, 124, 225, 500, 600, 787, 980, 5000};
+        assertEquals(BinarySearch.searchIter(array, 5000), 13);
+    }
 }

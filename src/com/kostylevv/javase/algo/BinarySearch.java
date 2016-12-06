@@ -22,4 +22,25 @@ public class BinarySearch {
             return searchRec(array, number, low, mid - 1);
         }
     }
+
+    public static int searchIter(int[] array, int number) {
+        int low = 0;
+        int high = array.length-1;
+
+        while (true) {
+            if (low > high)
+                return -1;
+
+            int mid = low + ((high - low) / 2);
+
+            if (array[mid] == number) {
+                return mid;
+            } else if (array[mid] < number) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+    }
 }
